@@ -1,5 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import Logo from '../../assets/Logo.png'
+import style from './Landing.module.css'
 
 
 export default function Landing() {
@@ -10,8 +12,10 @@ export default function Landing() {
   
     return (
         <>
-            <h1>Landing</h1>
-            <button onClick={()=> navigate('/home')}>HOME</button>
+
+            <img src={Logo} alt="" />
+            <h1>Henry Projects</h1>
+            <button className={style.button2} onClick={()=> navigate('/home')}>HOME</button>
         
         </>
     )
