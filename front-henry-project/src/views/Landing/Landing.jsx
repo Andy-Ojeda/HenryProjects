@@ -12,10 +12,12 @@ export default function Landing() {
   
     return (
         <>
+            <div className={style.containerAll}>
+                <img src={Logo} alt="" />
+                    <h1>Henry Projects</h1>
+                <button className={style.button2} onClick={()=> navigate('/home')}>HOME</button>
 
-            <img src={Logo} alt="" />
-            <h1>Henry Projects</h1>
-            <button className={style.button2} onClick={()=> navigate('/home')}>HOME</button>
+            </div>
         
         </>
     )
