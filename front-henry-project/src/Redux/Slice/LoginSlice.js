@@ -5,8 +5,9 @@ import axios from "axios";
 export const authenticateUser = createAsyncThunk(
   "auth/authenticateUser",
   async (credentials) => {
+    const endpoint = 'https://devsync-production.up.railway.app/user/login';
+
     try {
-      endpoint = 'https://devsync-production.up.railway.app/user/login'
       const response = await axios.post(endpoint, credentials);
       return response.data.user;
     } catch (error) {

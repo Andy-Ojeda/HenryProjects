@@ -1,20 +1,22 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Logo from "../../assets/Logo.png";
+import Logo from "../../assets/HEx.jpg";
+import Hola from "../../assets/Hola.jpg";
 import style from "./Landing.module.css";
-import Login from "../../Login/Login";
+import Login from "../../Components/Login/Login";
+
+
 
 export default function Landing() {
   const navigate = useNavigate();
 
   return (
     <>
-      <img src={Logo} alt="" />
-      <h1>Henry Experience</h1>
-      <button className={style.button2} onClick={() => navigate("/home")}>
-        HOME
-      </button>
+      <img className={style.img} src={Logo} alt="" />
+      <h1 className={style.title}>Henry Experience</h1>
+      <img className={style.hola} src={Hola} alt="" />     
+    
       <Login />
     </>
   );
