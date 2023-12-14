@@ -1,8 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit';
-import viewProjectsSlice from './Slices/viewProjectsSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import LoginSlice from "./Slices/LoginSlice";
+import viewProjectsSlice from "./Slices/viewProjectsSlice";
 
 export const store = configureStore({
-    reducer: {
-        viewProjects: viewProjectsSlice,
-    }
+  reducer: {
+    viewProjects: viewProjectsSlice,
+    userLogin: LoginSlice,
+  },
 });
