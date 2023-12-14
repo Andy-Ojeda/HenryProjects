@@ -36,7 +36,7 @@ export default function Home() {
             <div>
               <Filters />
             </div>
-        <h2>Hola, soy la Home 🧡</h2>
+        <h2>Henry Experiens 💛</h2>
             <div className={style.content}>
                 
                 

@@ -10,15 +10,26 @@ export default function Card(projects) {
 
 
   useEffect(()=>{
-    console.log("AllProjects: ", projects.projects.name);
-    setDatos(projects.projects.name);
+    console.log("AllProjects: ", projects.projects);
+    setDatos(projects.projects);
   },[projects])
 
 
   return (
     <div className={style.contALL}>
-        <h3>- Y yo una Card 💛 -</h3>
-        <h3>{datos}</h3>
+        {datos && datos.name && <h3>{datos.name}</h3>}
+        {datos && datos.description && <h5>{datos.description}</h5>}
+
+        <div className={style.contTechnologies}>
+            {datos && datos.technologies && datos.technologies.CSS === true && <h5>CSS</h5>}
+            {datos && datos.technologies && datos.technologies.HTML === true && <h5>HTML</h5>}
+            {datos && datos.technologies && datos.technologies.JavaScript === true && <h5>JavaScript</h5>}
+            {datos && datos.technologies && datos.technologies.NodeJS === true && <h5>NodeJS</h5>}
+            {datos && datos.technologies && datos.technologies.React === true && <h5>ReactJS</h5>}
+        </div>
+
+
+
     </div>
   )
 }
