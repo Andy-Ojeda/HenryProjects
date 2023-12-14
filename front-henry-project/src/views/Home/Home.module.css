@@ -1,0 +1,16 @@
+.contALL {
+    width: 97%;
+}
+.container {
+    background-color: rgb(240, 240, 240);
+    border: 1px solid black;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+.content {
+   
+    width: 80%;
+}

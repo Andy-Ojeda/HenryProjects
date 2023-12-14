@@ -7,9 +7,11 @@
 }
 
 .contAllAPP {
-  background-color: rgba(0, 0, 255, 0.63);
+  background-color: #ffff00;
   width: 100vw;
   height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 
 .logo {

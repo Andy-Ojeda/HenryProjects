@@ -1,5 +1,6 @@
 .contAll {
-    border: 2px solid black;
-    width: 100vw;
-    background-color: orange;
+    /* border: 2px solid black; */
+    width: 100%;
+    height: 3rem;
+    background-color: #ffff00;
 }
