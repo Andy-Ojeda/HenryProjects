@@ -11,6 +11,7 @@ import Login from "../../Components/Login/Login";
 export default function Landing() {
   const navigate = useNavigate();
 
+
   return (
     <>
       <img className={style.img} src={Logo} alt="" />

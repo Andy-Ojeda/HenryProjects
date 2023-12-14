@@ -3,16 +3,31 @@ import Home from "./views/Home/Home";
 import Landing from "./views/Landing/Landing";
 import AboutUs from "./views/About/About";
 
-import "./App.css";
+
+import Home from './views/Home/Home'
+import Landing from './views/Landing/Landing'
+import AboutUs from './views/About/About'
+import Nav from './Components/Nav/Nav'
+
+
+import './App.css'
+
 
 function App() {
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/about" element={<AboutUs />} />
-      </Routes>
+
+    <>  
+      <div className='contAllAPP'>
+        <Nav />
+        <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/about" element={<AboutUs/>} />
+        </Routes>
+      </div>
+
+    
+  
     </>
   );
 }
