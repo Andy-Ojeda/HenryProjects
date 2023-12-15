@@ -1,39 +1,50 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-
 export const viewProjectsSlice = createSlice({
+  name: "viewProjects",
+  initialState: {
+    projects: [],
+    projectById: {},
+  },
 
-    name: 'viewProjects', 
-    initialState: {
-        projects: ["pepito"],
-    },    
-
-    reducers: {
-        getProjects: (state, action) => {
-            state.projects = action.payload;
-        }
-    }
-
+  reducers: {
+    getProjects: (state, action) => {
+      state.projects = action.payload;
+    },
+    getProjectById: (state, action) => {
+      state.projectById = action.payload;
+    },
+  },
 });
 
-export const { getProjects } = viewProjectsSlice.actions;
+export const { getProjects, getProjectById } = viewProjectsSlice.actions;
 export default viewProjectsSlice.reducer;
 // export const stateProject = (state) => state.viewProjects.projects;
 
 export const fetchAllProjects = () => {
-    return async (dispatch) => {
-        try {
-            console.log("A punto de hacer el GET...")
-            
-            const { data } = await axios.get("http://localhost:3001/project");
-            console.log("ALL DATOS:", data);
-            dispatch(getProjects(data));
-        } catch (error) {
-            console.log("Error en fetchAllProjects", error.message);
-        }
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.get(
+        "https://devsync-production.up.railway.app/project"
+      );
+      dispatch(getProjects(data));
+    } catch (error) {
+      console.log("Error en fetchAllProjects", error.message);
     }
-}
+  };
+};
 
-
-
+export const fetchProjectById = (id) => {
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.get(
+        `https://devsync-production.up.railway.app/project/${id}`
+      );
+      dispatch(getProjectById(data));
+      return data;
+    } catch (error) {
+      console.log("Error en fetchProjectById", error.message);
+    }
+  };
+};

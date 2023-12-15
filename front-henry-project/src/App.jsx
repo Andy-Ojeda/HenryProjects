@@ -7,6 +7,7 @@ import AboutUs from './views/About/About'
 
 
 import './App.css'
+import Admin from "./views/Admin/Admin";
 
 
 function App() {
@@ -15,11 +16,12 @@ function App() {
     <>  
       <div className='contAllAPP'>
         {/* <Nav /> */}
-        <Routes>
+        {/* <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<AboutUs/>} />
-        </Routes>
+        </Routes> */}
+        <Admin/>
       </div>
 
     
