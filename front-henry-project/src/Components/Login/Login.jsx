@@ -25,7 +25,10 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const user = await dispatch(authenticateUser({ formData }));
+      const user = await dispatch(authenticateUser({
+        email: formData.email,
+        password: formData.password,
+      }));
 
       // Si el inicio de sesión fue exitoso, navegar a la página de inicio
       if (user) {
