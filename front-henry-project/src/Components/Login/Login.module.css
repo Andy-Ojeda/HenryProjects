@@ -26,3 +26,23 @@
   height: 35%;
   background-color: yellow;
 }
+
+.toggle{
+  position: absolute;
+ margin-top: 4.3em;  
+ margin-left: 23em;
+}
+
+.errorE{
+  color: rgba(188, 12, 12, 0.995);
+  font-size: 0.8em;
+  position: absolute;
+  margin-top: -1.6em;
+}
+
+.errorP{
+  color: rgba(188, 12, 12, 0.995);
+  font-size: 0.8em;
+  position: absolute;
+  margin-top: 3.3em;
+}
