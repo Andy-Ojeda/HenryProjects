@@ -2,13 +2,21 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { authenticateUser } from "../../Redux/Slices/LoginSlice";
 import { useNavigate } from "react-router-dom";
-import style from './Login.module.css'
+import style from './Login.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
+
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   const handleLogin = async () => {
     try {
@@ -38,11 +46,17 @@ const Login = () => {
       />
       <input
       className={style.input}
-        type="password"
         placeholder="Contraseña"
+        type={showPassword ? 'text' : 'password'}
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
+      <span
+            className={style.toggle}
+            onClick={togglePasswordVisibility}
+          >
+            <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
+          </span>
       <button className={style.boton} onClick={handleLogin} disabled={!isFormValid}>Ingresar</button>
     </div>
     </div>
