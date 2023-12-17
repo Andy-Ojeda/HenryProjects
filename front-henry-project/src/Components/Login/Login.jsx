@@ -5,14 +5,19 @@ import { useNavigate } from "react-router-dom";
 import style from './Login.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import validate from "./Validate";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+ 
+  
+  const [showPassword, setShowPassword] = useState(false);
+  const [errors, setErrors] = useState({});
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [showPassword, setShowPassword] = useState(false);
-
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  })
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -20,7 +25,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const user = await dispatch(authenticateUser({ email, password }));
+      const user = await dispatch(authenticateUser({ formData }));
 
       // Si el inicio de sesión fue exitoso, navegar a la página de inicio
       if (user) {
@@ -31,7 +36,13 @@ const Login = () => {
     }
   };
 
-  const isFormValid = email.trim() !== "" && password.trim() !== "";
+  const isFormValid = formData.email.trim() !== "" && formData.password.trim() !== "";
+
+
+  const handleBlur = (event) => {
+    const { name, value } = event.target;
+    setErrors(validate({ ...formData, [name]: value })); 
+  };
 
   return (
     <div className={style.yellow}>
@@ -41,16 +52,23 @@ const Login = () => {
       className={style.input}
         type="text"
         placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        value={formData.email}
+        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+        onBlur={handleBlur}
       />
+      {errors.email && (
+            <span className={style.errorE}> {errors.email} </span>
+          )}
       <input
       className={style.input}
         placeholder="Contraseña"
         type={showPassword ? 'text' : 'password'}
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        value={formData.password}
+        onChange={(e) => setFormData({ ...formData, password: e.target.value })}
       />
+      {errors.password && (
+            <span className={style.errorP}> {errors.password} </span>
+          )}
       <span
             className={style.toggle}
             onClick={togglePasswordVisibility}
