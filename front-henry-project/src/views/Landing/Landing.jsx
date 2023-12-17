@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Logo from "../../assets/HenryExp.png";
+import Logo from "../../assets/HEx.jpg";
 import Hola from "../../assets/Hola.jpg";
 import style from "./Landing.module.css";
 import Login from "../../Components/Login/Login";
