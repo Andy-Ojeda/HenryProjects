@@ -1,16 +1,17 @@
 
 .contALL {
+  margin-top: 1rem;
   /* border: 2px solid black; */
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   /* margin-left: -0.6rem; */
-  /* justify-content: center;
-  align-items: center; */
+  justify-content: center;
+  /* align-items: center; */
 }
 
 .contLogo img {
-  width: 40%;
+  width: 50%;
 }
 
 .contLogin {
