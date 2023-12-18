@@ -31,26 +31,29 @@ export default function Home() {
 
   return (
     <div className={style.contALL}>
-      <Nav />
+        <div className={style.contNav}>
+            <Nav />
+
+        </div>
         <div className={style.container}>
             <div>
               <Filters />
             </div>
-        <h2>Henry Experiens 💛</h2>
+            
+            <h2>Henry Experiens 💛</h2>
+            
             <div className={style.content}>
-                
-                
                 {
                     projects ? projects.map((pro)=> <Card projects={pro}/> ) : null
                     
                 }
-
             </div>
 
 
-            
 
         </div>
+            
+
 
 
 
