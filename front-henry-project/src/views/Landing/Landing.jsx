@@ -13,12 +13,22 @@ export default function Landing() {
 
 
   return (
-    <>
-      <img className={style.img} src={Logo} alt="" />
-      <h1 className={style.title}>Henry Experience</h1>
-      <img className={style.hola} src={Hola} alt="" />     
-    
-      <Login />
-    </>
+    <div className={style.contALL}>
+        <div className={style.contLogo}>
+            <img className={style.img} src={Logo} alt="" />
+        </div>
+
+        <h1 className={style.title}>Henry Experience</h1>
+        
+        <div className={style.contHola}>
+          {/* <h2>hola!!</h2> */}
+            <img className={style.hola} src={Hola} alt="" />     
+        </div>
+
+        <div className={style.contLogin}>
+            <Login />
+        </div>
+
+    </div>
   );
 }
