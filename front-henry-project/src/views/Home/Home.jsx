@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import style from './Home.module.css';
 import Filters from '../../Components/Filters/Filters';
 
-import { fetchAllProjects } from '../../redux/Slices/viewProjectsSlice';
+import { fetchAllProjects } from '../../redux/Slices/viewProjectsSlice.js';
 import { useDispatch, useSelector } from "react-redux";
 import Card from '../../Components/Cards/Card';
 import Nav from '../../Components/Nav/Nav';
+import Menu from '../../Components/Menu/Menu.jsx';
+
 
 export default function Home() {
 
@@ -30,35 +32,43 @@ export default function Home() {
   },[])
 
   return (
-    <div className={style.contALL}>
-        <div className={style.contNav}>
-            <Nav />
-
-        </div>
-        <div className={style.container}>
-            <div>
-              <Filters />
+        <div className={style.contALL}>
+            <div className={style.contNav}>
+                <Nav />
             </div>
             
-            <h2>Henry Experiens 💛</h2>
-            
-            <div className={style.content}>
-                {
-                    projects ? projects.map((pro)=> <Card projects={pro}/> ) : null
+            <div className={style.contAll}>
+                <div className={style.contMenu}>
+                    <Menu />
+                </div>
+                <div className={style.container}>
+                    <div className={style.contFilters}>
+                      <Filters />
+                    </div>
                     
-                }
+                    <h2>Henry Experiens 💛</h2>
+                    
+                    <div className={style.content}>
+                        {
+                            projects ? projects.map((pro)=> <Card projects={pro}/> ) : null
+                            
+                        }
+                    </div>
+
+
+
+                </div>
+                    
+
             </div>
 
 
 
+
+
+
         </div>
-            
 
-
-
-
-
-
-    </div>
+    
   )
 }
