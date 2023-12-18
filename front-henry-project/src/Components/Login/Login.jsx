@@ -28,7 +28,7 @@ const Login = () => {
   return (
     <div className={style.yellow}>
     <div className={style.container}>
-      
+      <h2>Login:</h2>
       <input
       className={style.input}
         type="text"

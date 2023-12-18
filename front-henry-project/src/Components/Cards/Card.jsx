@@ -18,7 +18,7 @@ export default function Card(projects) {
   return (
     <div className={style.contALL}>
         {datos && datos.name && <h3>{datos.name}</h3>}
-        {datos && datos.description && <h5>{datos.description}</h5>}
+        {datos && datos.description && <p>{datos.description}</p>}
 
         <div className={style.contTechnologies}>
             {datos && datos.technologies && datos.technologies.CSS === true && <h5>CSS</h5>}
