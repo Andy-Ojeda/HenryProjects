@@ -19,11 +19,34 @@
 }
 
 .yellow {
+
   /* position: absolute; */
   /* top: 29.05em; */
   /* left: 0;
+
+  
   width: 100%;
   height: 35%;
   background-color: yellow; */
   margin-bottom: 2rem;
+}
+
+.toggle{
+  position: absolute;
+ margin-top: 4.3em;  
+ margin-left: 23em;
+}
+
+.errorE{
+  color: rgba(188, 12, 12, 0.995);
+  font-size: 0.8em;
+  position: absolute;
+  margin-top: -1.6em;
+}
+
+.errorP{
+  color: rgba(188, 12, 12, 0.995);
+  font-size: 0.8em;
+  position: absolute;
+  margin-top: 3.3em;
 }

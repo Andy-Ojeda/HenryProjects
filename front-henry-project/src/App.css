@@ -6,13 +6,13 @@
   text-align: center;
 }
 
-.contAllAPP {
+/* .contAllAPP {
   background-color: #ffff00;
   width: 100vw;
   height: auto;
   display: flex;
-  justify-content: center;
-}
+  justify-content: center;x
+} */
 
 .logo {
   height: 6em;
