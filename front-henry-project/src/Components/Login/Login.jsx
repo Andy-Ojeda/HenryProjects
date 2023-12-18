@@ -31,12 +31,17 @@ const Login = () => {
       }));
 
       // Si el inicio de sesión fue exitoso, navegar a la página de inicio
-      if (user) {
+      if (user.payload.access === true) {
         navigate("/home");
-      }
+       }
+       else{
+        alert('Por favor registrese para ingresar')
+       }
+       console.log(user);
     } catch (error) {
       console.error("Error during login:", error);
     }
+   
   };
 
   const isFormValid = formData.email.trim() !== "" && formData.password.trim() !== "";

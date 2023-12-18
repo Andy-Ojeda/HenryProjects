@@ -3,13 +3,14 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const authenticateUser = createAsyncThunk(
-  "auth/authenticateUser",
+  "authenticateUser",
   async (credentials) => {
     const endpoint = 'https://devsync-production.up.railway.app/user/login';
 
     try {
       const response = await axios.post(endpoint, credentials);
-      return response.data.user;
+      return response.data;
+      
     } catch (error) {
       console.error("User not found: ", error);
       throw error;
