@@ -20,7 +20,7 @@ export default function Menu() {
             <button onClick={()=>handleButton("home")}><span>To Do</span></button>
         </div>
         <div className={style.links}>
-            <button onClick={()=>handleButton("onGoing")}><span>On Going</span></button>
+            <button onClick={()=>handleButton("ongoing")}><span>On Going</span></button>
         </div>
         <div className={style.links}>
             <button onClick={()=>handleButton("done")}><span>Done</span></button>

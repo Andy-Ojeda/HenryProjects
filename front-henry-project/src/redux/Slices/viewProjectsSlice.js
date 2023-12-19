@@ -1,9 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const backURL = import.meta.env.VITE_URL_BACK;
+
 
 export const viewProjectsSlice = createSlice({
 
+
+    
     name: 'viewProjects', 
     initialState: {
         projects: ["pepito"],
@@ -24,9 +28,7 @@ export default viewProjectsSlice.reducer;
 export const fetchAllProjects = () => {
     return async (dispatch) => {
         try {
-            console.log("A punto de hacer el GET...")
-            
-            const { data } = await axios.get("http://localhost:3001/project");
+            const { data } = await axios.get(`${backURL}/project`);
             console.log("ALL DATOS:", data);
             dispatch(getProjects(data));
         } catch (error) {
