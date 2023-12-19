@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from './views/Home/Home'
 import Landing from './views/Landing/Landing'
 import AboutUs from './views/About/About'
+import OnGoing from './views/OnGoing/OnGoing'
 // import Nav from './Components/Nav/Nav'
 
 
@@ -18,6 +19,9 @@ function App() {
         <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/ongoing" element={<OnGoing />} />
+            <Route path="/home" element={<Home />} />
+
             <Route path="/about" element={<AboutUs/>} />
         </Routes>
       </div>

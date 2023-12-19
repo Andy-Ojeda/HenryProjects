@@ -12,6 +12,8 @@ export default function Landing() {
   const navigate = useNavigate();
 
 
+  
+
   return (
     <div className={style.contALL}>
         <div className={style.contLogo}>
