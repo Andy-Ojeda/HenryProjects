@@ -13,6 +13,7 @@
 }
 .contLogo img {
     height: 80%;
+    cursor: pointer;
 }
 .contTitle {
     width: 80%;
