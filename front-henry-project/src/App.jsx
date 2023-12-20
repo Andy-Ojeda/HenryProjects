@@ -8,6 +8,7 @@ import OnGoing from './views/OnGoing/OnGoing'
 
 
 import './App.css'
+import Admin from "./views/Admin/Admin";
 
 
 function App() {
@@ -21,8 +22,8 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/ongoing" element={<OnGoing />} />
             <Route path="/home" element={<Home />} />
-
             <Route path="/about" element={<AboutUs/>} />
+            <Route path="/admin" element={<Admin/>}/>
         </Routes>
       </div>
 

@@ -11,77 +11,141 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.popupProject{
+.closePopup{
+  position: absolute;
+  top: 3rem;
+  right: 10rem;
+  font-size: 2rem;
+}
+
+.popupProject {
   width: 80%;
   height: 80vh;
   padding: 3rem 1.5rem;
   background-color: #ffffff;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: 150px;
-  grid-template-areas: 
-    "img img img no name name name no createUser createUser createUser no"
-    "part part par no description description description no createEmail createEmail createEmail no"
-    "part part par no description description description no tech tech tech no"
-    "part part par no front front no back back no trello trello"
-    "no no btnFinish btnFinish btnFinish no no btnDelete btnDelete btnDelete no no";
   border-radius: 20px;
-  gap: 1rem;
-  position: relative;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "image . name name . created"
+    "part . description description . tech"
+    "part front . back . trello"
+    ". finish finish delete delete ."; 
+}
+.image { 
+  grid-area: image;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 }
 
-.imagePopupProjet{
-  grid-area: img;
+.imagePopupProject{
+  border-radius: 20px;
+  width: 12rem;
 }
 
-.namePopupProjet{
-  grid-area: name;
-}
-
-.CreateByUserPopupProjet{
-  grid-area: createUser;
-}
-
-.CreateByEmailPopupProjet{
-  grid-area: createUser;
-}
-
-.containerPart{
+.part { 
   grid-area: part;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-direction: column;
 }
 
-.containerDescription{
-  grid-area: description;
+.created { 
+  grid-area: created;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center; 
+  flex-direction: column;
 }
 
-.containerTech{
+.name { 
+  grid-area: name;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.tech { 
   grid-area: tech;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-direction: column;
 }
 
-.containerFront{
+.description { 
+  grid-area: description;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.descriptionPopupProject{
+  font-size: 1.1rem;
+  border: 2px solid #bc20ff;
+  padding: 1rem .5rem;
+  border-radius: 20px;
+}
+
+.front { 
   grid-area: front;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 }
 
-.containerBack{
+.back { 
   grid-area: back;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 }
 
-.containerTrello{
+.trello { 
   grid-area: trello;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 }
 
-.containerBtnFinish{
-  grid-area: btnFinish;
+.finish { 
+  grid-area: finish;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 }
 
-.containerBtnDelete{
-  grid-area: btnDelete;
+.delete { 
+  grid-area: delete;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 }
 
-.closePopup{
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 2rem;
-}
 

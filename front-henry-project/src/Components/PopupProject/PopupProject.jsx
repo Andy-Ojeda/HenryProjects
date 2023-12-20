@@ -18,21 +18,39 @@ const PopupProject = ({ showPopupProject, setShowPopupProject }) => {
 
   return (
     <div className={style.containerPopupProject}>
+      <IoCloseCircle className={style.closePopup} onClick={handlerShowPopUp} />
       <div className={style.popupProject}>
-        <IoCloseCircle
-          className={style.closePopup}
-          onClick={handlerShowPopUp}
-        />
-        <div>
-          <img src={Logo} alt="Imagen del Proyecto" className={style.imagePopupProjet}/>
+        <div className={style.image}>
+          <img
+            src={Logo}
+            alt="Imagen del Proyecto"
+            className={style.imagePopupProject}
+          />
         </div>
-        <div>
+        <div className={style.part}>
+          {projectById.participants &&
+            projectById.participants.map((part) => (
+              <div key={part._id} className={style.containerPart}>
+                <h3 className={style.partPopupProject}>{part.userName}</h3>
+                <h3>{part.email}</h3>
+              </div>
+            ))}
+        </div>
+        <div className={style.created}>
+          <h3>Creado por:</h3>
+          <div>
+            <h3 className={style.createByUserPopupProjet}>
+              {projectById.createdBy && projectById.createdBy.userName}
+            </h3>
+            <h3 className={style.createByEmailPopupProjet}>
+              {projectById.createdBy && projectById.createdBy.email}
+            </h3>
+          </div>
+        </div>
+        <div className={style.name}>
           <h2 className={style.namePopupProjet}>{projectById.name}</h2>
         </div>
-        <div>
-          <p>{projectById.description}</p>
-        </div>
-        <div className={style.containerTech}>
+        <div className={style.tech}>
           {projectById.technologies &&
           projectById.technologies.HTML === true ? (
             <h3>HTML</h3>
@@ -53,31 +71,41 @@ const PopupProject = ({ showPopupProject, setShowPopupProject }) => {
             <h3>React</h3>
           ) : null}
         </div>
-        <div className={style.containerCreateBy}>
-          <h3 className={style.CreateByUserPopupProjet}>{projectById.createdBy && projectById.createdBy.userName}</h3>
-          <h3 className={style.CreateByEmailPopupProjet}>{projectById.createdBy && projectById.createdBy.email}</h3>
+        <div className={style.description}>
+          <p className={style.descriptionPopupProject}>
+            {projectById.description}
+          </p>
         </div>
-        <div className={style.containerPart}>
-          {projectById.participants &&
-            projectById.participants.map((part) => (
-              <div key={part._id}>
-                <h3>{part.userName}</h3>
-                <h3>{part.email}</h3>
-              </div>
-            ))}
+        <div className={style.front}>
+          <h3>
+            {projectById.linkProjectFront
+              ? projectById.linkProjectFront
+              : "Link Front"}
+          </h3>
         </div>
-        <div className={style.containerBack}>
-          <h3>{projectById.linkProjectBack}</h3>
+        <div className={style.back}>
+          <h3>
+            {projectById.linkProjectBack
+              ? projectById.linkProjectBack
+              : "Link Back"}
+          </h3>
         </div>
-        <div className={style.containerFront}>
-          <h3>{projectById.linkProjectFront}</h3>
+        <div className={style.trello}>
+          <h3>
+            {projectById.linkProjectManagement
+              ? projectById.linkProjectManagement
+              : "Link Trello"}
+          </h3>
         </div>
-        <div className={style.containerTrello}>
-          <h3>{projectById.linkProjectManagement}</h3>
+        <div className={style.finish}>
+          <button className={style.containerBtnFinish}>
+            Finalizar Proyecto
+          </button>
         </div>
-        <div>
-          <button className={style.containerBtnFinish}>Finalizar Proyecto</button>
-          <button className={style.containerBtnDelete}>Eliminar Proyecto</button>
+        <div className={style.delete}>
+          <button className={style.containerBtnDelete}>
+            Eliminar Proyecto
+          </button>
         </div>
       </div>
     </div>
