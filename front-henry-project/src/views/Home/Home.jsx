@@ -46,8 +46,6 @@ export default function Home() {
                       <Filters />
                     </div>
                     
-                    <h2>Henry Experiens 💛</h2>
-                    
                     <div className={style.content}>
                         {
                             projects && projects.map((pro, id) => pro.state==="toDo" && <Card projects={pro} key={id}/> ) 

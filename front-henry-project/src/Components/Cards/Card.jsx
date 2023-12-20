@@ -22,7 +22,7 @@ export default function Card(projects) {
 
 
   return (
-    <div className={style.contALL} onClick={handleClick}>
+    // <div className={style.contALL} onClick={handleClick}>
       <div className={style.card}>
         <div className={style.cardDetails}>
             {datos && datos.name && <h3>{datos.name}</h3>}
@@ -41,6 +41,6 @@ export default function Card(projects) {
 
       </div>
 
-    </div>
+    // </div>
   )
 }
