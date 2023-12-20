@@ -28,13 +28,16 @@ const PopupProject = ({ showPopupProject, setShowPopupProject }) => {
           />
         </div>
         <div className={style.part}>
-          {projectById.participants &&
-            projectById.participants.map((part) => (
-              <div key={part._id} className={style.containerPart}>
-                <h3 className={style.partPopupProject}>{part.userName}</h3>
-                <h3>{part.email}</h3>
-              </div>
-            ))}
+          <h3>Colaboradores:</h3>
+          <div className={style.containerPart}>
+            {projectById.participants &&
+              projectById.participants.map((part) => (
+                <div key={part._id} >
+                  <h3 className={style.partPopupProject}>{part.userName}</h3>
+                  <h3>{part.email}</h3>
+                </div>
+              ))}
+          </div>
         </div>
         <div className={style.created}>
           <h3>Creado por:</h3>
@@ -77,35 +80,22 @@ const PopupProject = ({ showPopupProject, setShowPopupProject }) => {
           </p>
         </div>
         <div className={style.front}>
-          <h3>
-            {projectById.linkProjectFront
-              ? projectById.linkProjectFront
-              : "Link Front"}
-          </h3>
+          <h3>Link Repo Front:</h3>
+          <h3>{projectById.linkProjectFront}</h3>
         </div>
         <div className={style.back}>
-          <h3>
-            {projectById.linkProjectBack
-              ? projectById.linkProjectBack
-              : "Link Back"}
-          </h3>
+          <h3>Link Repo Back:</h3>
+          <h3>{projectById.linkProjectBack}</h3>
         </div>
         <div className={style.trello}>
-          <h3>
-            {projectById.linkProjectManagement
-              ? projectById.linkProjectManagement
-              : "Link Trello"}
-          </h3>
+          <h3>Link Gestion de Proyecto:</h3>
+          <h3>{projectById.linkProjectManagement}</h3>
         </div>
         <div className={style.finish}>
-          <button className={style.containerBtnFinish}>
-            Finalizar Proyecto
-          </button>
+          <button className={style.btnFinish}>Finalizar Proyecto</button>
         </div>
         <div className={style.delete}>
-          <button className={style.containerBtnDelete}>
-            Eliminar Proyecto
-          </button>
+          <button className={style.btnDelete}>Eliminar Proyecto</button>
         </div>
       </div>
     </div>

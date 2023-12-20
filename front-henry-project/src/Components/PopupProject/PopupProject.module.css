@@ -23,6 +23,7 @@
   height: 80vh;
   padding: 3rem 1.5rem;
   background-color: #ffffff;
+  border: 2px solid #000000;
   border-radius: 20px;
   display: grid; 
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; 
@@ -53,9 +54,16 @@
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center; 
   flex-direction: column;
+  font-size: 0.8rem;
+}
+
+.containerPart{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .created { 
@@ -108,8 +116,10 @@
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center; 
+  flex-direction: column;
+  font-size: .7rem;
 }
 
 .back { 
@@ -117,8 +127,10 @@
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center; 
+  flex-direction: column;
+  font-size: .7rem;
 }
 
 .trello { 
@@ -126,8 +138,10 @@
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center; 
+  flex-direction: column;
+  font-size: .7rem;
 }
 
 .finish { 
@@ -139,6 +153,23 @@
   align-items: center; 
 }
 
+.btnFinish{
+  font-size: 1.3rem;
+  padding: 1rem 2rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  background-color: #ffff00;
+  color: #000000;
+  font-weight: bold;
+  transition: all 0.5s ease;
+}
+
+.btnFinish:hover{
+  background-color: #000000;
+  color: #ffff00;
+}
+
 .delete { 
   grid-area: delete;
   width: 100%;
@@ -148,4 +179,19 @@
   align-items: center; 
 }
 
+.btnDelete{
+  font-size: 1.3rem;
+  padding: 1rem 2rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  background-color: #ffff00;
+  color: #000000;
+  font-weight: bold;
+  transition: all 0.5s ease;
+}
 
+.btnDelete:hover{
+  background-color: #000000;
+  color: #ffff00;  
+}
