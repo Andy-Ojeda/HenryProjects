@@ -1,8 +1,14 @@
 .contALL {
-    background-color: pink;
+    background-color: rgba(210, 212, 197, 0.534);
     height: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.contALL h3 {
+    color: white;
+    text-shadow: 3px 3px 7px black;
 }
