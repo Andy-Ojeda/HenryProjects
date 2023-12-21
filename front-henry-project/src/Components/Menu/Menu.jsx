@@ -1,6 +1,7 @@
 import React from 'react'
 import style from './Menu.module.css';
 import { useNavigate } from 'react-router-dom';
+import Logo from '../../assets/HenryExp.png'
 
 export default function Menu() {
 
@@ -13,6 +14,9 @@ export default function Menu() {
 
   return (
     <div className={style.contMenu}>
+        {/* <div className={style.contLogo}>
+            <img src={Logo} alt="Logo" />
+        </div> */}
         <div className={style.contTitle}>
             <h4>PROJECTS:</h4>
         </div>

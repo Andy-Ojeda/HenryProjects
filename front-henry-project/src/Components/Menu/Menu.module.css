@@ -45,3 +45,12 @@
     opacity: 1;
     right: 0;
    }
+   .contLogo {
+    width: 100%;
+    background-color: red;
+    border: 2px solid black;
+    /* height: 20%; */
+   }
+   .contLogo img {
+    width: 90%;
+   }
