@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { authenticateUser } from "../../Redux/Slices/LoginSlice";
+import { authenticateUser } from "../../redux/Slices/LoginSlice";
 import { useNavigate } from "react-router-dom";
 import style from './Login.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
