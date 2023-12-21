@@ -17,7 +17,8 @@ export default function Card(projects) {
   },[projects])
 
   const handleClick = () => {
-      navigate(`proyecto/${datos._id}`);
+      navigate(`/project/${datos._id}`, { replace: true });
+      // navigate("/project", { replace: true });
   }
 
 
