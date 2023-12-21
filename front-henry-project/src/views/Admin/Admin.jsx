@@ -4,7 +4,7 @@ import Nav from "../../Components/Nav/Nav";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAllProjects, fetchProjectById} from "../../redux/Slices/viewProjectsSlice";
 import Logo from "../../assets/descarga.jpg";
-import { fetchAllUsers } from "../../Redux/Slices/viewUserSlice";
+import { fetchAllUsers } from "../../redux/Slices/viewUserSlice";
 import PopupProject from "../../Components/PopupProject/PopupProject";
 
 /* Que puede hacer el Admin 
