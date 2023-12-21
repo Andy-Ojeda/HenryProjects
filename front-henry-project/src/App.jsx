@@ -5,7 +5,7 @@ import Landing from './views/Landing/Landing'
 import AboutUs from './views/About/About'
 import OnGoing from './views/OnGoing/OnGoing'
 import Done from "./views/Done/Done";
-// import Nav from './Components/Nav/Nav'
+import Project from './views/Project/Project'
 
 
 import './App.css'
@@ -26,6 +26,7 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<AboutUs/>} />
             <Route path="/admin" element={<Admin/>}/>
+            <Route path="/project/:id" element={<Project/>}/>
         </Routes>
       </div>
 
