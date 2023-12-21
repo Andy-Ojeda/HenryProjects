@@ -5,15 +5,14 @@
   margin: 0 auto; 
   /* padding: 2rem; */
   text-align: center;
+
 }
 
-/* .contAllAPP {
-  background-color: #ffff00;
+.contAllAPP {
   width: 100vw;
-  height: auto;
-  display: flex;
-  justify-content: center;
-} */
+  height: 100vh;
+ 
+}
 
 /* .logo {
   height: 6em;
