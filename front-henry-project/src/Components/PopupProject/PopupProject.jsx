@@ -2,7 +2,7 @@ import React from "react";
 import style from "./PopupProject.module.css";
 import { IoCloseCircle } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
-import { getProjectById } from "../../redux/Slices/viewProjectsSlice";
+import { getProjectById } from "../../Redux/Slices/viewProjectsSlice";
 import Logo from "../../assets/descarga.jpg";
 import axios from "axios";
 
