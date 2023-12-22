@@ -4,6 +4,7 @@ import { IoCloseCircle } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { getProjectById } from "../../Redux/Slices/viewProjectsSlice";
 import Logo from "../../assets/descarga.jpg";
+import axios from "axios";
 
 const PopupProject = ({ showPopupProject, setShowPopupProject }) => {
   const projectById = useSelector((state) => state.viewProjects.projectById);
@@ -13,6 +14,15 @@ const PopupProject = ({ showPopupProject, setShowPopupProject }) => {
     await dispatch(getProjectById({}));
     setShowPopupProject(false);
   };
+
+  const handlerFinishProject = async () => {
+    await axios.patch(
+      // "https://devsync-production.up.railway.app/project/update",
+      "http://localhost:3001/project/update", 
+      {projectId: projectById._id, active: false}
+      )
+      setShowPopupProject(false);
+  }
 
   console.log(projectById);
 
@@ -92,7 +102,7 @@ const PopupProject = ({ showPopupProject, setShowPopupProject }) => {
           <h3>{projectById.linkProjectManagement}</h3>
         </div>
         <div className={style.finish}>
-          <button className={style.btnFinish}>Finalizar Proyecto</button>
+          <button className={projectById.active === false ? style.btnFinished :style.btnFinish} onClick={projectById.active === false ? null : handlerFinishProject}>Finalizar Proyecto</button>
         </div>
         <div className={style.delete}>
           <button className={style.btnDelete}>Eliminar Proyecto</button>

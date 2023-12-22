@@ -163,11 +163,24 @@
   color: #000000;
   font-weight: bold;
   transition: all 0.5s ease;
+  cursor: pointer;
 }
 
 .btnFinish:hover{
   background-color: #000000;
   color: #ffff00;
+}
+
+.btnFinished{
+  font-size: 1.3rem;
+  padding: 1rem 2rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  background-color: #e1e1e1;
+  color: #9a9a9a;
+  font-weight: bold;
+  transition: all 0.5s ease;
 }
 
 .delete { 
@@ -189,6 +202,7 @@
   color: #000000;
   font-weight: bold;
   transition: all 0.5s ease;
+  cursor: pointer;
 }
 
 .btnDelete:hover{
