@@ -75,7 +75,7 @@ const Admin = () => {
   useEffect(() => {
     dispatch(fetchAllProjects());
     dispatch(fetchAllUsers());
-  }, []);
+  }, [showPopupProject]);
 
   return (
     <>
