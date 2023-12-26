@@ -1,0 +1,41 @@
+.contALL {
+    position: absolute;
+    width: 12rem;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    background-color: #ffff00;
+    z-index: 9999;
+    margin-left: -24rem;
+    margin-top: 1rem;
+}
+.contTec {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    /* background-color: green; */
+    /* margin-top: 1rem; */
+}
+.contComp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* margin: 1rem; */
+    width: 100%;
+    /* background-color: red; */
+    padding-top: 1rem;
+}
+.contComp:hover {
+    background-color: #dbdb00;
+}
+.contComp input {
+    margin-right: 1.5rem;
+}
+.contComp label {
+    margin-left: 1.5rem;
+}
+.contCompHTML {
+    border-radius: 20px 20px 0px 0px;
+}
+.contButton {
+    margin-top: 1rem;
+}

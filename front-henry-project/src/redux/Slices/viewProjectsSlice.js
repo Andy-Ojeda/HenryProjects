@@ -26,7 +26,8 @@ export const fetchAllProjects = () => {
   return async (dispatch) => {
     try {
       const { data } = await axios.get(
-        "https://devsync-production.up.railway.app/project"
+        "http://localhost:3001/project"
+        // "https://devsync-production.up.railway.app/project"
       );
       dispatch(getProjects(data));
     } catch (error) {
