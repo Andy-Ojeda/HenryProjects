@@ -2,7 +2,7 @@ import React from 'react'
 import style from './OnGoing.module.css';
 import { useEffect, useState } from 'react';
 
-import { fetchAllProjects } from '../../redux/Slices/viewProjectsSlice.js';
+import { fetchAllProjects } from '../../Redux/Slices/viewProjectsSlice.js';
 import { useDispatch, useSelector } from "react-redux";
 import Card from '../../Components/Cards/Card';
 import Nav from '../../Components/Nav/Nav';

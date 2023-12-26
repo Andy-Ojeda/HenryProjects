@@ -26,8 +26,11 @@ export const fetchAllProjects = () => {
   return async (dispatch) => {
     try {
       const { data } = await axios.get(
+
         "http://localhost:3001/project"
         // "https://devsync-production.up.railway.app/project"
+
+       
       );
       dispatch(getProjects(data));
     } catch (error) {
@@ -40,7 +43,23 @@ export const fetchProjectById = (id) => {
   return async (dispatch) => {
     try {
       const { data } = await axios.get(
-        `https://devsync-production.up.railway.app/project/${id}`
+        // `https://devsync-production.up.railway.app/project/${id}`
+        `http://localhost:3001/project/${id}`
+      );
+      dispatch(getProjectById(data));
+      return data;
+    } catch (error) {
+      console.log("Error en fetchProjectById", error.message);
+    }
+  };
+};
+
+export const fetchProjectUpdate = (id) => {
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.get(
+        // `https://devsync-production.up.railway.app/project/${id}`
+        `http://localhost:3001/project/${id}`
       );
       dispatch(getProjectById(data));
       return data;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import style from "./Admin.module.css";
 import Nav from "../../Components/Nav/Nav";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAllProjects, fetchProjectById} from "../../redux/Slices/viewProjectsSlice";
+import { fetchAllProjects, fetchProjectById} from "../../Redux/Slices/viewProjectsSlice";
 import Logo from "../../assets/descarga.jpg";
 import { fetchAllUsers } from "../../redux/Slices/viewUserSlice";
 import PopupProject from "../../Components/PopupProject/PopupProject";
@@ -75,7 +75,7 @@ const Admin = () => {
   useEffect(() => {
     dispatch(fetchAllProjects());
     dispatch(fetchAllUsers());
-  }, []);
+  }, [showPopupProject]);
 
   return (
     <>

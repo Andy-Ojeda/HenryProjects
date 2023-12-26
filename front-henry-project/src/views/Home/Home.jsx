@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import style from './Home.module.css';
 import Filters from '../../Components/Filters/Filters';
 
-import { fetchAllProjects } from '../../redux/Slices/viewProjectsSlice.js';
+import { fetchAllProjects } from '../../Redux/Slices/viewProjectsSlice.js';
 import { useDispatch, useSelector } from "react-redux";
 import Card from '../../Components/Cards/Card';
 import Nav from '../../Components/Nav/Nav';
