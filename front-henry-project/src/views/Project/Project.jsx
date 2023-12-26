@@ -8,29 +8,35 @@ import Card from '../../Components/Cards/Card';
 import Nav from '../../Components/Nav/Nav';
 import Menu from '../../Components/Menu/Menu.jsx';
 import { FaArrowRightToBracket } from "react-icons/fa6";
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Project() {
 
-  const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
-  const AllProjects = useSelector((state) => state.viewProjects.projects);
+    const AllProjects = useSelector((state) => state.viewProjects.projects);
 
-  const [projects, setProjects] = useState(null);
+    const [projects, setProjects] = useState(null);
 
   
 
-  useEffect(()=>{
-      console.log("Estado GLOBAL...", AllProjects); 
-      setProjects(AllProjects);
-      console.log("Projects LOCAL: ", projects)
-  },[AllProjects])
+//   useEffect(()=>{
+//       console.log("Estado GLOBAL...", AllProjects); 
+//       setProjects(AllProjects);
+//       console.log("Projects LOCAL: ", projects)
+//   },[AllProjects])
 
-  useEffect(()=>{
-    console.log("STATEEEEE...", AllProjects);
-      console.log("Dentro del handleButton, dispatchando...");
-      dispatch(fetchAllProjects());
-  },[])
+//   useEffect(()=>{
+//     console.log("STATEEEEE...", AllProjects);
+//       console.log("Dentro del handleButton, dispatchando...");
+//       dispatch(fetchAllProjects());
+//   },[])
+
+  const handlerClose = () => {
+    navigate("/home");
+  }
 
   return (
         <div className={style.contALL}>
@@ -43,7 +49,7 @@ export default function Project() {
                     <Menu />
                 </div> */}
                 <div className={style.container}>
-                    <div className={style.contAtras}>
+                    <div className={style.contAtras} onClick={handlerClose}>
                         <label>Back <FaArrowRightToBracket /></label>
                     </div>
                     {/* <div className={style.contFilters}>
