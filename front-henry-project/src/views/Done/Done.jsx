@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import style from './Home.module.css';
+import style from './Done.module.css';
 import Filters from '../../Components/Filters/Filters';
 
 import { fetchAllProjects } from '../../Redux/Slices/viewProjectsSlice.js';
@@ -9,7 +9,7 @@ import Nav from '../../Components/Nav/Nav';
 import Menu from '../../Components/Menu/Menu.jsx';
 
 
-export default function Home() {
+export default function Done() {
 
   const dispatch = useDispatch();
 
@@ -48,7 +48,7 @@ export default function Home() {
                     
                     <div className={style.content}>
                         {
-                            projects && projects.map((pro, id) => pro.state==="toDo" && <Card projects={pro} key={id}/> ) 
+                            projects && projects.map((pro, id) => pro.state==="done" && <Card projects={pro} key={id}/> ) 
                                 
                             
                         }

@@ -23,18 +23,27 @@ a:hover {
 }
 
 body {
+  /* width: 100vw; */
   margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-  /* background-color: #ffff00;
-  box-shadow: inset 0 0 0 2px #d30f0f; */
+  /* justify-content: center; */
+  /* place-items: center; */
+  /* min-width: 320px; */
+  /* min-height: 100vh; */
+  background-color: #ffff00;
+  /* border: 4px solid red; */
+  /* box-shadow: inset 0 0 0 2px #d30f0f; */
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+h2,h3,h4,h5,h6,p,ul,li,a{
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0
 }
 
 /* button {
@@ -64,7 +73,7 @@ button:focus-visible {
   a:hover {
     color: #747bff;
   }
-  button {
+  /* button {
     background-color: #f9f9f9;
-  }
+  } */
 }

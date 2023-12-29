@@ -1,15 +1,71 @@
 .contALL {
     background-color: rgb(228, 228, 228);
-    border-radius: 7px;
+    border-radius: 20px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.404);
+    cursor: pointer;
+    margin-bottom: 1rem;
+    height: 7rem;
 }
+.contALL:hover {
+    transform: translateY(-2px);
+}
+
 .contTechnologies {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-}
-.contTechnologies h5 {
-    border: 1px solid grey;
+    margin-top: 0rem;
 }
 
 
+/* ::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+.card {
+    cursor: pointer;
+    
+    width: 90%;
+    /* height: 254px; */
+    border-radius: 20px;
+    background: #f5f5f5;
+    position: relative;
+    padding: 0em 1.5rem;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    height: 7.7rem;
+    margin-bottom: 1rem;
+   }
+   
+.card:hover {
+    border-color: #fffc56;
+    /* box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25); */
+    /* transform: translateY(-2px); */
+    background: linear-gradient(
+        to right,
+        rgba(255, 251, 200, 0.8) 0%,
+        rgba(255, 252, 49, 0.959) 50%,
+        rgba(255, 251, 200, 0.8) 100%
+      );
+}
+
+.cardDetails {
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid red; */
+    height: 100%;
+}
+.cardDetails h3 {
+    margin-top: 0rem;
+    height: 25%;
+    /* border: 1px solid black; */
+}
+.cardDetails p {
+    margin-top: 0.5rem;
+    height: 50%;
+    /* border: 1px solid black; */
+}
+.contTechnologies {
+    /* border: 1px solid black; */
+    margin-top: 0.5rem;
+    height: 25%;
+}

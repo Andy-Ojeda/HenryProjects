@@ -1,37 +1,28 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import style from './Filters.module.css';
+import PopUp from '../FiltersPopUp/FiltersPopUp';
 
 export default function Filters() {
+
+  
+
+  const [popUp, setPopUp] = useState(false);
+
+  const handlerButton = () => {
+    
+    setPopUp(!popUp);
+    // myDivRef.current.focus();
+  }
+  
+
+
   return (
     <div className={style.contALL}>
-        <h3>Hola, soy Filters ❤</h3>
-        <div className={style.filters}>
-                <select>
-                  <option>algo1</option>
-                  <option>algo1</option>
-                  <option>algo1</option>
-                  <option>algo1</option>
-                </select>
-                <select>
-                  <option>algo1</option>
-                  <option>algo1</option>
-                  <option>algo1</option>
-                  <option>algo1</option>
-                </select>
-                <select>
-                  <option>algo1</option>
-                  <option>algo1</option>
-                  <option>algo1</option>
-                  <option>algo1</option>
-                </select>
-                <select>
-                  <option>algo1</option>
-                  <option>algo1</option>
-                  <option>algo1</option>
-                  <option>algo1</option>
-                </select>
-                
-            </div>
+        <p>{popUp.toString()}</p>
+        <button className={style.buttonFil} onClick={()=>handlerButton()}>Filtrar por... {popUp && "🔻"}</button>
+        <div className={style.filters} >
+            <PopUp handlerButton={handlerButton} popUp={popUp} />        
+        </div>
     </div>
   )
 }

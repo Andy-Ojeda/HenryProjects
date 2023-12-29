@@ -2,10 +2,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+
 export const authenticateUser = createAsyncThunk(
   "authenticateUser",
   async (credentials) => {
-    const endpoint = 'https://devsync-production.up.railway.app/user/login';
+    // const endpoint = 'https://devsync-production.up.railway.app/user/login';
+    const endpoint = import.meta.env.VITE_URL_BACK;
 
     try {
       const response = await axios.post(endpoint, credentials);

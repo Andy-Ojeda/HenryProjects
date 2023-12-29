@@ -3,6 +3,7 @@
     flex-direction: row;
     /* background-color: rgb(252, 252, 252); */
     height: 90%;
+    justify-content: center;
 }
 .contMenu {
     width: 20%;
@@ -52,5 +53,20 @@
     height: 90%;
 }
 
-
-
+.contAtras {
+    /* background-color: white; */
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    margin-top: 0.5rem;
+}
+.contAtras label {
+    color: white;
+    font-size: 1.2rem;
+    margin-right: 1.5rem;
+    cursor: pointer;
+}
+.contAtras label:hover {
+    transform: translateY(-2px);
+    color: #ffff00;
+}
