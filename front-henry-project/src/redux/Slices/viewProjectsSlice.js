@@ -14,6 +14,7 @@ export const viewProjectsSlice = createSlice({
     },
     getProjectById: (state, action) => {
       state.projectById = action.payload;
+   
     },
   },
 });
@@ -42,7 +43,7 @@ export const fetchAllProjects = () => {
 export const fetchProjectById = (id) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios.get(
+      const { data } = await axios(
         // `https://devsync-production.up.railway.app/project/${id}`
         `http://localhost:3001/project/${id}`
       );
