@@ -20,8 +20,10 @@ export default function Landing() {
             <img className={style.img} src={Logo} alt="" />
         </div>
 
-        <h1 className={style.title}>Henry Experience</h1>
-        
+        <div className={style.contH1}>
+            <h1 className={style.title}>Henry Experience</h1>
+        </div>
+
         <div className={style.contHola}>
           {/* <h2>hola!!</h2> */}
             <img className={style.hola} src={Hola} alt="" />     
