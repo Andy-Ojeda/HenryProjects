@@ -18,7 +18,7 @@ export default function Filters() {
 
   return (
     <div className={style.contALL}>
-        <p>{popUp.toString()}</p>
+        {/* <p>{popUp.toString()}</p> */}
         <button className={style.buttonFil} onClick={()=>handlerButton()}>Filtrar por... {popUp && "🔻"}</button>
         <div className={style.filters} >
             <PopUp handlerButton={handlerButton} popUp={popUp} />        

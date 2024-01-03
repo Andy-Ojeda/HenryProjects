@@ -16,7 +16,7 @@ export default function FiltersPopUp({handlerButton, popUp}) {
     return (
         <div ref={myInputRef}>
         {popUp && 
-            <div className={style.contALL} onBlur={()=>handlerButton(false)}>
+            <div className={style.contALL} >
                 <div className={style.contTec}>
                     <div className={`${style.contComp} ${style.contCompHTML}`}>
                         <label>HTML</label><input type="checkbox" name="HTML" id="" />
@@ -34,7 +34,7 @@ export default function FiltersPopUp({handlerButton, popUp}) {
                         <label>NodeJS</label><input type="checkbox" name="NodeJS" id="" />
                     </div>
                     <div className={style.contButton}>
-                        <button onClick={()=>handlerButton(false)}>Aplicar filtro</button>
+                        <button className={style.button} onClick={()=>handlerButton(false)}>Aplicar filtro</button>
                     </div>
                 </div>
             </div>
