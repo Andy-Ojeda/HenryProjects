@@ -5,7 +5,7 @@ export const viewProjectsSlice = createSlice({
   name: "viewProjects",
   initialState: {
     projects: [],
-    projectById: {},
+    projectById: [],
   },
 
   reducers: {

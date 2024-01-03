@@ -18,6 +18,8 @@ export default function Project() {
     const dispatch = useDispatch();
 
     const {projectById} = useSelector((state) => state.viewProjects);
+
+    console.log("PROJECTbyID...", projectById);
     console.log("PROJECT NAME...", projectById.name);
 console.log("PROJECT Description...", projectById.description);
     const user= useSelector((state) => state.userLogin.user);
@@ -42,6 +44,7 @@ console.log("USERUSER:: ", user)
 
  // Obtiene el ID del proyecto de los parámetros de la URL
  const { id } = useParams();
+ console.log("ID: ", id);
 
 useEffect(() => {
     const fetchData = async () => {
@@ -73,43 +76,43 @@ const handleJoinProject = () => {
             <div className={style.contNav}>
                 <Nav />
             </div>
-            <div>
-                        {loading? (
-                            <p>Cargando detalle del proyecto</p>
-                        ) : (
-                           <>
-                                <h2>{projectById.name}</h2>
-                                <p>{projectById.description}</p>
-                                <p>Creado por: {projectById.createdBy.name}</p>
-                                <p>Participantes : {projectById.length}</p>
-
-                                {/* {projectById.includes(user._id) ? (
-                                    <p> Ya eres participante de este proyecto</p>
-                                ) : (
-                                    <button onClick={handleJoinProject}>Unirse</button>
-                                )} */}
-                           </> 
-                        )}
-
-                        {projectById && projectById.include(user._id)? (
-                                    <p> Ya eres participante de este proyecto</p>
-                                ) : (
-                                    <button onClick={handleJoinProject}>Unirse</button>
-                                )
-
-                    
-                        }
-
-
-
-                    </div>
+            
             <div className={style.contAll}>
                 
                 <div className={style.container}>
                     <div className={style.contAtras} onClick={handlerClose}>
                         <label>Back <FaArrowRightToBracket /></label>
                     </div>
-                   
+                    <div className={style.contCard}>
+                        {loading? (
+                                <p>Cargando detalle del proyecto</p>
+                            ) : (
+                            <>      
+                                    <div className={style.contTitulo}>
+                                        <h2>{projectById.name}</h2>
+                                        <div className={style.contP}>
+                                            <p>Creado por: <label>{projectById.createdBy.name}</label></p>
+                                            <p>Participantes : <label>{projectById.length}</label></p>
+                                        </div>
+                                    </div>
+
+                                    {user && user._id && <h3>Debes Registrarte</h3> }
+                                    
+                                    <div className={style.contDescription}>
+                                        <p>{projectById.description}</p>
+                                    </div>
+
+                                    <div className={style.contButton}>
+                                        {projectById && projectById.participants.includes(user._id)? (
+                                                    <p> Ya eres participante de este proyecto</p>
+                                                ) : (
+                                                    <button className={style.button} onClick={handleJoinProject}>Unirse</button>
+                                                )
+                                        }
+                                    </div>
+                            </> 
+                            )}
+                    </div>
 
 
                 </div>
