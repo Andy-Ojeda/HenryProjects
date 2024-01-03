@@ -7,11 +7,13 @@ export const authenticateUser = createAsyncThunk(
   "authenticateUser",
   async (credentials) => {
     // const endpoint = 'https://devsync-production.up.railway.app/user/login';
-    const endpoint = import.meta.env.VITE_URL_BACK;
+    //const endpoint = import.meta.env.VITE_URL_BACK;
 
+    const endpoint = 'http://localhost:3001/user/login'
     try {
       const response = await axios.post(endpoint, credentials);
       return response.data;
+      
       
     } catch (error) {
       console.error("User not found: ", error);
