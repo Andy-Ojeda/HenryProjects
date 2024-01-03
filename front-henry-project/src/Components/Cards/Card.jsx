@@ -9,7 +9,7 @@ export default function Card(projects) {
     const navigate = useNavigate();
 
     const [datos, setDatos] = useState(null);
-
+    const [descriptionLimited, setDescriptionLimited] = useState(null);
 
   useEffect(()=>{
     console.log("AllProjects: ", projects.projects);
@@ -21,13 +21,19 @@ export default function Card(projects) {
       // navigate("/project", { replace: true });
   }
 
+  useEffect(()=>{
+    if (datos) {
+      const descripcion = datos.description;
+      setDescriptionLimited(descripcion.slice(0, 100));
+    }
+  },[datos])
 
   return (
     // <div className={style.contALL} onClick={handleClick}>
       <div className={style.card} onClick={handleClick}>
         <div className={style.cardDetails}>
             {datos && datos.name && <h3>{datos.name}</h3>}
-            {datos && datos.description && <p>{datos.description}</p>}
+            {datos && datos.description && <p>{`${descriptionLimited} ...`}</p>}
 
             <div className={style.contTechnologies}>
                 {datos && datos.technologies && datos.technologies.CSS === true && <h5>CSS</h5>}
