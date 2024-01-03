@@ -18,15 +18,15 @@ export default function Project() {
     const dispatch = useDispatch();
 
     const {projectById} = useSelector((state) => state.viewProjects);
-    console.log(projectById.name);
-console.log(projectById.description);
+    console.log("PROJECT NAME...", projectById.name);
+console.log("PROJECT Description...", projectById.description);
     const user= useSelector((state) => state.userLogin.user);
     const [loading, setLoading] = useState(true);
 
     const [projects, setProjects] = useState(null);
 
   
-
+console.log("USERUSER:: ", user)
 //   useEffect(()=>{
 //       console.log("Estado GLOBAL...", AllProjects); 
 //       setProjects(AllProjects);
@@ -63,7 +63,7 @@ useEffect(() => {
 const handleJoinProject = () => {
     
     dispatch(joinProject(id))
-
+}
   const handlerClose = () => {
     navigate("/home");
   }
@@ -78,39 +78,38 @@ const handleJoinProject = () => {
                             <p>Cargando detalle del proyecto</p>
                         ) : (
                            <>
-                           <h2>{projectById.name}</h2>
-                           <p>{projectById.description}</p>
-                           <p>Creado por: {projectById.createdBy.name}</p>
-                           <p>Participantes : {projectById.length}</p>
+                                <h2>{projectById.name}</h2>
+                                <p>{projectById.description}</p>
+                                <p>Creado por: {projectById.createdBy.name}</p>
+                                <p>Participantes : {projectById.length}</p>
 
-                           {projectById.includes(user._id) ? (
-                            <p> Ya eres participante de este proyecto</p>
-                           ) : (
-                            <button onClick={handleJoinProject}>Unirse</button>
-                           )}
+                                {/* {projectById.includes(user._id) ? (
+                                    <p> Ya eres participante de este proyecto</p>
+                                ) : (
+                                    <button onClick={handleJoinProject}>Unirse</button>
+                                )} */}
                            </> 
                         )}
+
+                        {projectById && projectById.include(user._id)? (
+                                    <p> Ya eres participante de este proyecto</p>
+                                ) : (
+                                    <button onClick={handleJoinProject}>Unirse</button>
+                                )
+
+                    
+                        }
+
+
+
                     </div>
             <div className={style.contAll}>
-                {/* <div className={style.contMenu}>
-                    <Menu />
-                </div> */}
+                
                 <div className={style.container}>
                     <div className={style.contAtras} onClick={handlerClose}>
                         <label>Back <FaArrowRightToBracket /></label>
                     </div>
-                    {/* <div className={style.contFilters}>
-                      <Filters />
-                    </div> */}
-                    
-                    {/* <div className={style.content}>
-                        {
-                            projects && projects.map((pro, id) => pro.state==="toDo" && <Card projects={pro} key={id}/> ) 
-                                
-                            
-                        }
-                    </div> */}
-
+                   
 
 
                 </div>
@@ -127,5 +126,5 @@ const handleJoinProject = () => {
 
     
   )
-}
+
 }
