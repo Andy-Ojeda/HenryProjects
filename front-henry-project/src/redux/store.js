@@ -3,6 +3,7 @@ import LoginSlice from "./Slices/LoginSlice.js";
 import viewProjectsSlice from "./Slices/viewProjectsSlice.js";
 import UsersSlice from "./Slices/viewUserSlice.js";
 import  {JoinProjectSlice}  from "./Slices/JoinProjectSlice.js";
+import { createProject } from "./Slices/CreateProject.js";
 
 
 export const store = configureStore({
@@ -11,6 +12,7 @@ export const store = configureStore({
     userLogin: LoginSlice,
     viewUsers: UsersSlice,
     joinProject: JoinProjectSlice,
+    project: createProject
   },
   
 });
