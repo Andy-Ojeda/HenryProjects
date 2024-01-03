@@ -50,7 +50,7 @@ height: 90%;
     /* margin-left: -18em; */
 }
 .contLogin {
-  border: 3px solid green;
+  /* border: 3px solid green; */
   display: flex;
   /* flex-direction: row; */
   justify-content: center;
