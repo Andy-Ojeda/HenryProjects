@@ -12,7 +12,7 @@ export default function Card(projects) {
     const [descriptionLimited, setDescriptionLimited] = useState(null);
 
   useEffect(()=>{
-    console.log("AllProjects: ", projects.projects);
+    // console.log("AllProjects: ", projects.projects);
     setDatos(projects.projects);
   },[projects])
 
