@@ -1,14 +1,18 @@
 .contALL {
     /* border: 2px solid black; */
     width: 100%;
-    height: 3rem;
-    background-color: #ffff00;
+    
+    height: 4em;
+    /* background-color: #ffff00; */
+    margin-top: -0.4em;
+    background-color: white;
     display: flex;
     flex-direction: row;
 }
 
 .contLogo {
     width: 10%;
+    padding: 1em;
     /* border: 1px solid black; */
 }
 .contLogo img {
@@ -21,5 +25,6 @@
 }
 .contUser {
     width: 10%;
+    padding: 1em;
     /* border: 1px solid black; */
 }
