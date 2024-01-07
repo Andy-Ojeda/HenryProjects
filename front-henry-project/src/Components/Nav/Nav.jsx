@@ -12,7 +12,9 @@ export default function Nav() {
             <img src={Logo} alt="" onClick={()=>navigate("/")} />
         </div>
         <div className={style.contTitle}>
+
             <h2></h2>
+
         </div>
         <div className={style.contUser}>
             <h4>User</h4>

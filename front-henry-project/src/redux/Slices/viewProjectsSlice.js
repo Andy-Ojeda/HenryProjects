@@ -6,6 +6,10 @@ export const viewProjectsSlice = createSlice({
   initialState: {
     projects: [],
     projectById: [],
+    
+    projectsFilter: [], //* AGREGADO recientemente
+    viewFilter: false,
+  
   },
 
   reducers: {
@@ -14,12 +18,21 @@ export const viewProjectsSlice = createSlice({
     },
     getProjectById: (state, action) => {
       state.projectById = action.payload;
-   
     },
+    
+    
+    getProjectsFilter: (state, action) => {
+      state.projectsFilter = action.payload;
+    },
+    setViewFilter: (state, action) => {
+      state.viewFilter = action.payload;
+    }
+  
+  
   },
 });
 
-export const { getProjects, getProjectById } = viewProjectsSlice.actions;
+export const { getProjects, getProjectById, getProjectsFilter, setViewFilter } = viewProjectsSlice.actions;
 export default viewProjectsSlice.reducer;
 // export const stateProject = (state) => state.viewProjects.projects;
 
@@ -69,3 +82,31 @@ export const fetchProjectUpdate = (id) => {
     }
   };
 };
+
+
+export const fetchProjectsFilter = (URL) =>{
+  return async (dispatch) => {
+    try {
+      console.log("URL a dispatchar...", URL);
+      const {data} = await axios.get(URL);
+      console.log("DATADATADATA...", data)
+      dispatch(getProjectsFilter(data));
+      // return data;
+    } catch (error) {
+      console.log("Error en fetchProjectsFilter...", error.message);
+    }
+  };
+};
+export const viewFilterSN = (value) =>{
+  
+  console.log("VALUEEEEE:::: ", value);
+  
+  // return async (dispatch) => {
+  //   try {
+  //     console.log("Muestra el Filter?? ", value);
+  //     dispatch(setViewFilter(value));
+  //   } catch (error) {
+  //     console.log("Error en viewFilterSN... ", error.message);
+  //   }
+  // }
+}

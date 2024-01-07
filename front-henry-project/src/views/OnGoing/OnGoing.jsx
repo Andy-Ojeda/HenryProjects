@@ -15,22 +15,24 @@ export default function OnGoing() {
     const dispatch = useDispatch();
 
     const AllProjects = useSelector((state) => state.viewProjects.projects);
-  
-    const [projects, setProjects] = useState(null);
+    const projectsFilter = useSelector((state) => state.viewProjects.projectsFilter);
+    const viewFilter = useSelector((state) => state.viewProjects.viewFilter);
+    
+    // const [projects, setProjects] = useState(null);
   
     
   
-    useEffect(()=>{
-        console.log("Estado GLOBAL...", AllProjects); 
-        setProjects(AllProjects);
-        console.log("Projects LOCAL: ", projects)
-    },[AllProjects])
+    // useEffect(()=>{
+    //     console.log("Estado GLOBAL...", AllProjects); 
+    //     setProjects(AllProjects);
+    //     console.log("Projects LOCAL: ", projects)
+    // },[AllProjects])
   
-    useEffect(()=>{
-      console.log("STATEEEEE...", AllProjects);
-        console.log("Dentro del handleButton, dispatchando...");
-        dispatch(fetchAllProjects());
-    },[])
+    // useEffect(()=>{
+    //   console.log("STATEEEEE...", AllProjects);
+    //     console.log("Dentro del handleButton, dispatchando...");
+    //     dispatch(fetchAllProjects());
+    // },[])
   
 
 
@@ -52,13 +54,28 @@ export default function OnGoing() {
                     </div>
                     
                     
-                    <div className={style.content}>
+                    {/* <div className={style.content}>
                         {
                             projects && projects.map((pro, id) => pro.state==="onGoing" && <Card projects={pro} key={id}/> ) 
-                                
-                            
                         }
-                    </div>
+                    </div> */}
+
+
+                    {viewFilter === false ? 
+                        <div className={style.content}>
+                            {
+                                AllProjects ? AllProjects.map((pro, id) => pro.state==="onGoing" && <Card projects={pro} key={id}/> ) 
+                                            : <h4>Buscando...</h4>
+                            }
+                        </div>
+                        :
+                        <div className={style.content}>
+                            {
+                                projectsFilter ? projectsFilter.map((pro, id) => pro.state==="onGoing" && <Card projects={pro} key={id}/> ) 
+                                            : <h4 style={color="white"}>Buscando...</h4>
+                            }
+                        </div>
+                    }
 
 
 

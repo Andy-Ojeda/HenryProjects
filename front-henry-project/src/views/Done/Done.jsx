@@ -13,23 +13,23 @@ export default function Done() {
 
   const dispatch = useDispatch();
 
-  const AllProjects = useSelector((state) => state.viewProjects.projects);
-
-  const [projects, setProjects] = useState(null);
-
+    const AllProjects = useSelector((state) => state.viewProjects.projects);
+    const projectsFilter = useSelector((state) => state.viewProjects.projectsFilter);
+    const viewFilter = useSelector((state) => state.viewProjects.viewFilter);
+    
   
 
-  useEffect(()=>{
-      console.log("Estado GLOBAL...", AllProjects); 
-      setProjects(AllProjects);
-      console.log("Projects LOCAL: ", projects)
-  },[AllProjects])
+//   useEffect(()=>{
+//       console.log("Estado GLOBAL...", AllProjects); 
+//       setProjects(AllProjects);
+//       console.log("Projects LOCAL: ", projects)
+//   },[AllProjects])
 
-  useEffect(()=>{
-    console.log("STATEEEEE...", AllProjects);
-      console.log("Dentro del handleButton, dispatchando...");
-      dispatch(fetchAllProjects());
-  },[])
+//   useEffect(()=>{
+//     console.log("STATEEEEE...", AllProjects);
+//       console.log("Dentro del handleButton, dispatchando...");
+//       dispatch(fetchAllProjects());
+//   },[])
 
   return (
         <div className={style.contALL}>
@@ -46,13 +46,28 @@ export default function Done() {
                       <Filters />
                     </div>
                     
-                    <div className={style.content}>
+                    {/* <div className={style.content}>
                         {
                             projects && projects.map((pro, id) => pro.state==="done" && <Card projects={pro} key={id}/> ) 
-                                
-                            
                         }
-                    </div>
+                    </div> */}
+
+
+                    {viewFilter === false ? 
+                        <div className={style.content}>
+                            {
+                                AllProjects ? AllProjects.map((pro, id) => pro.state==="done" && <Card projects={pro} key={id}/> ) 
+                                            : <h4>Buscando...</h4>
+                            }
+                        </div>
+                        :
+                        <div className={style.content}>
+                            {
+                                projectsFilter ? projectsFilter.map((pro, id) => pro.state==="done" && <Card projects={pro} key={id}/> ) 
+                                            : <h4 style={color="white"}>Buscando...</h4>
+                            }
+                        </div>
+                    }
 
 
 
